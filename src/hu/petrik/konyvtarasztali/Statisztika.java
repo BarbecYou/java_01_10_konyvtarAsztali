@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Statisztika {
-    private List<Konyv> konyvLista = new ArrayList<>();
+    public List<Konyv> konyvLista = new ArrayList<>();
 
 
-    private void readData() throws SQLException {
+    public void readData() throws SQLException {
         Connection conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/konyvek",
                 "root", ""
@@ -24,6 +24,7 @@ public class Statisztika {
                     rs.getInt("page_count")
             );
             konyvLista.add(konyv);
+
         }
     }
 }
